@@ -1,5 +1,5 @@
 // import './Board.css';
-import Boardtiles from './Boardtiles';
+import Boardtiles from './Tiles';
 import Pieces from './Pieces';
 
 function Board() {
