@@ -1,5 +1,5 @@
 import './App.css';
-import Menu from './components/Menu';
+import Game from './components/Game';
 
 function App() {
   return (
@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         React Chess App
       </header>
-      <Menu />
+      <Game />
     </div>
   );
 }

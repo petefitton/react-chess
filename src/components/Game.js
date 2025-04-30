@@ -1,8 +1,11 @@
-import './Game.css';
+// import './Game.css';
+import Board from './Board';
 
 function Game() {
   return (
-    <></>
+    <>
+      <Board />
+    </>
   );
 }
 
