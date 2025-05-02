@@ -1,13 +1,16 @@
 // import './withPiece.css';
 
+import { useState } from "react";
+
 function withPiece(WrappedComponent) {
   function getDisplayName(WrappedComponent) {
     return WrappedComponent.displayName || WrappedComponent.name || 'Component';
   }
-  
-  const EnhancedComponent = (props) => {
+
+  const EnhancedComponent = (props, { pieceColor }) => {
+    let [whosePiece] = useState(pieceColor);
     return (
-      <WrappedComponent {...props} />
+      <WrappedComponent whosePiece={whosePiece} {...props} />
     );
   }
 

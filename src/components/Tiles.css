@@ -1,0 +1,7 @@
+.tiles-container {
+  display: grid;
+  grid-template-columns: repeat(8, auto);
+  width: fit-content;
+  margin: 100px auto 0px;
+  border: black 1px solid;
+}

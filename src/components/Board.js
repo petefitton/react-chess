@@ -1,12 +1,10 @@
 // import './Board.css';
-import Boardtiles from './Tiles';
-import Pieces from './Pieces';
+import Tiles from './Tiles';
 
-function Board() {
+function Board({ piecePlacement, handleTileClick }) {
   return (
     <>
-      <Boardtiles />
-      <Pieces />
+      <Tiles piecePlacement={piecePlacement} handleTileClick={handleTileClick} />
     </>
   );
 }
