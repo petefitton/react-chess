@@ -25,12 +25,58 @@ function Game() {
     // call setGameEnding()
   }
 
+  function whatIsAtTileLocation(tileLocation) {
+    // returns a single character from these character options: "PNBRQKpnbrqk-" ("-" means empty)
+    let rank = tileLocation[1]; // ex: for "e4" -> "4"
+    let file = tileLocation[0]; // ex: for "e4" -> "e"
+    let currentBoardRankFenNotation = piecePlacement.split("/")[rank];
+
+    function breakOutRank(currentBoardRankFenNotation) {
+      // break currentBoardRankFenNotation into 8 characters in one string
+      let output = "";
+      for (let i=0; i<currentBoardRankFenNotation.length; i++) {
+        if (/^[1-8]+$/.test(currentBoardRankFenNotation[i])) {
+          for (let j=0; j<currentBoardRankFenNotation[i]; j++) {
+            output += "-";
+          }
+        }
+        else if (/^[PNBRQKpnbrqk]+$/.test(currentBoardRankFenNotation[i])) {
+          output += currentBoardRankFenNotation[i];
+        }
+      }
+      return output;
+    }
+
+    let currentBoardRankBrokenOut = breakOutRank(currentBoardRankFenNotation);
+
+    return currentBoardRankBrokenOut[file];
+  }
+
   function handleTileClick(tileLocation) {
-    // console.log(tileLocation);
-    // if clicked tile holds a piece belonging to player whose turn it is, then setSourceTile
-    // otherwise, setTargetTile
-    // if targetTile is set, call isMoveLegal()
-    // if move is legal, should call handleMove() 
+    // ex piecePlacement for starting position: rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR
+
+    let clickedTile = whatIsAtTileLocation(tileLocation);
+    if (/^[PNBRQK]+$/.test(clickedTile)) {
+      // selected piece is white
+      if (whoseTurn === "w") {
+        setSourceTile(clickedTile);
+      } else {
+        setTargetTile(clickedTile);
+        if (isMoveLegal()) {
+          handleMove();
+        };
+      }
+    } else {
+      // selected piece is black
+      if (whoseTurn === "b") {
+        setSourceTile(clickedTile);
+      } else {
+        setTargetTile(clickedTile);
+        if (isMoveLegal()) {
+          handleMove();
+        };
+      }
+    }
   }
 
   function isMoveLegal() {

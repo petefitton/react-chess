@@ -27,7 +27,7 @@ function Tiles({ piecePlacement, handleTileClick }) {
       }
       else if (/^[PNBRQKpnbrqk]+$/.test(piecePlacement[char])) {
         // there is a piece
-        tiles.push(<Tile children={<CreatePiece pieceType={char} key={i} />} key={tileLocations[i]} id={tileLocations[i]} handleTileClick={handleTileClick}  isWhite={Math.floor(i / 8) % 2 === 0 ? i % 2 === 0 : i % 2 !== 0} />);
+        tiles.push(<Tile children={<CreatePiece pieceType={piecePlacement[char]} key={i} />} key={tileLocations[i]} id={tileLocations[i]} handleTileClick={handleTileClick}  isWhite={Math.floor(i / 8) % 2 === 0 ? i % 2 === 0 : i % 2 !== 0} />);
         i++;
       }
     }
