@@ -1,6 +1,7 @@
 // import './Game.css';
 import { useState } from 'react';
 import Display from './Display';
+import CreatePiece from '../utilities/createPiece';
 
 function Game() {
   let [isActive, setIsActive] = useState(true);
@@ -84,18 +85,26 @@ function Game() {
     // determine if the move/capture is legal:
     // 1. that piece on sourceTile can move to targetTile or capture targetTile piece
     // 2. that the move/capture does not lead current player to be in check
+    let movingPieceType = whatIsAtTileLocation(sourceTile);
+    let movingPiece = <CreatePiece pieceType={movingPieceType} />;
+    let targetTilePiece = whatIsAtTileLocation(targetTile);
+    if (targetTilePiece === "-") {
+      return movingPiece.canMove(sourceTile, targetTile);
+    } else {
+      return movingPiece.canCapture(sourceTile, targetTile);
+    }
   }
 
   function handleMove() {
-    // call setWhoseTurn() 
-    // call setPiecePlacement() 
-    // call setCastlingPossible() 
-    // call setEnPassant() 
-    // call setHalfmove() 
-    // call setFullmove() 
-    // call setSourceTile() 
-    // call setTargetTile() 
-    // call areMovesPossible() which in turn calls isCheckMate()
+    // setWhoseTurn();
+    // setPiecePlacement();
+    // setCastlingPossible();
+    // setEnPassant();
+    // setHalfmove();
+    // setFullmove();
+    // setSourceTile();
+    // setTargetTile();
+    // areMovesPossible();
   }
 
   return (
