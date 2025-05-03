@@ -6,9 +6,9 @@ function Pawn({ pieceColor }) {
   return (
     <>
       {pieceColor === "w" ?
-        <img src={`${PUBLIC_URL}/img/wpawn.png`} alt='white pawn'></img>
+        <img src={`${PUBLIC_URL}/img/wpawn.png`} alt='white pawn' style={{ pointerEvents: 'none' }}></img>
         :
-        <img src={`${PUBLIC_URL}/img/bpawn.png`} alt='black pawn'></img>
+        <img src={`${PUBLIC_URL}/img/bpawn.png`} alt='black pawn' style={{ pointerEvents: 'none' }}></img>
       }
     </>
   );

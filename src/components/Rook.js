@@ -6,9 +6,9 @@ function Rook({ pieceColor }) {
   return (
     <>
       {pieceColor === "w" ?
-        <img src={`${PUBLIC_URL}/img/wrook.png`} alt='white rook'></img>
+        <img src={`${PUBLIC_URL}/img/wrook.png`} alt='white rook' style={{ pointerEvents: 'none' }}></img>
         :
-        <img src={`${PUBLIC_URL}/img/brook.png`} alt='black rook'></img>
+        <img src={`${PUBLIC_URL}/img/brook.png`} alt='black rook' style={{ pointerEvents: 'none' }}></img>
       }
     </>
   );

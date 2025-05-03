@@ -6,9 +6,9 @@ function Bishop({ pieceColor }) {
   return (
     <>
       {pieceColor === "w" ?
-        <img src={`${PUBLIC_URL}/img/wbishop.png`} alt='white bishop'></img>
+        <img src={`${PUBLIC_URL}/img/wbishop.png`} alt='white bishop' style={{ pointerEvents: 'none' }}></img>
         :
-        <img src={`${PUBLIC_URL}/img/bbishop.png`} alt='black bishop'></img>
+        <img src={`${PUBLIC_URL}/img/bbishop.png`} alt='black bishop' style={{ pointerEvents: 'none' }}></img>
       }
     </>
   );

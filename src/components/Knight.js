@@ -6,9 +6,9 @@ function Knight({ pieceColor }) {
   return (
     <>
       {pieceColor === "w" ?
-        <img src={`${PUBLIC_URL}/img/wknight.png`} alt='white knight'></img>
+        <img src={`${PUBLIC_URL}/img/wknight.png`} alt='white knight' style={{ pointerEvents: 'none' }}></img>
         :
-        <img src={`${PUBLIC_URL}/img/bknight.png`} alt='black knight'></img>
+        <img src={`${PUBLIC_URL}/img/bknight.png`} alt='black knight' style={{ pointerEvents: 'none' }}></img>
       }
     </>
   );

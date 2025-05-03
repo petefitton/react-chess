@@ -6,9 +6,9 @@ function King({ pieceColor }) {
     return (
       <>
         {pieceColor === "w" ?
-          <img src={`${PUBLIC_URL}/img/wking.png`} alt='white king'></img>
+          <img src={`${PUBLIC_URL}/img/wking.png`} alt='white king' style={{ pointerEvents: 'none' }}></img>
           :
-          <img src={`${PUBLIC_URL}/img/bking.png`} alt='black king'></img>
+          <img src={`${PUBLIC_URL}/img/bking.png`} alt='black king' style={{ pointerEvents: 'none' }}></img>
         }
       </>
     );

@@ -6,9 +6,9 @@ function Queen({ pieceColor }) {
   return (
     <>
       {pieceColor === "w" ?
-        <img src={`${PUBLIC_URL}/img/wqueen.png`} alt='white queen'></img>
+        <img src={`${PUBLIC_URL}/img/wqueen.png`} alt='white queen' style={{ pointerEvents: 'none' }}></img>
         :
-        <img src={`${PUBLIC_URL}/img/bqueen.png`} alt='black queen'></img>
+        <img src={`${PUBLIC_URL}/img/bqueen.png`} alt='black queen' style={{ pointerEvents: 'none' }}></img>
       }
     </>
   );
