@@ -39,7 +39,7 @@ function Tiles({ piecePlacement, handleTileClick }) {
         i++;
       }
     }
-  }, [piecePlacement]);
+  }, [handleTileClick, piecePlacement]);
 
   return (
     <div className="tiles-container">
