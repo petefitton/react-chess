@@ -1,8 +1,16 @@
 // import './Pawn.css';
+import { useState } from 'react';
 
-function Pawn() {
+function Pawn({ pieceColor }) {
+  const [PUBLIC_URL] = useState(process.env.PUBLIC_URL);
   return (
-    <></>
+    <>
+      {pieceColor === "w" ?
+        <img src={`${PUBLIC_URL}/img/wpawn.png`} alt='white pawn'></img>
+        :
+        <img src={`${PUBLIC_URL}/img/bpawn.png`} alt='black pawn'></img>
+      }
+    </>
   );
 }
 

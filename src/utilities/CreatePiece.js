@@ -1,5 +1,5 @@
 // import './CreatePiece.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import withPiece from '../hocs/withPiece';
 import Pawn from '../components/Pawn';
 import Bishop from '../components/Bishop';
@@ -11,35 +11,44 @@ import King from '../components/King';
 function CreatePiece({ pieceType }) {
   let [pieceColor, setPieceColor] = useState("");
 
-  if (/^[PNBRQK]+$/.test(pieceType)) {
-    setPieceColor("w");
-  } else {
-    setPieceColor("b");
-  }
+  useEffect(() => {
+    if (/^[PNBRQK]+$/.test(pieceType)) {
+      setPieceColor("w");
+    } else {
+      setPieceColor("b");
+    }
+  }, [pieceType]);
+
   
   if (/^[Pp]+$/.test(pieceType)) {
     // define props that Pawn should receive
-    return withPiece(Pawn)();
+    let NewPawn = withPiece(Pawn);
+    return <NewPawn pieceColor={pieceColor} />
   }
   if (/^[Nn]+$/.test(pieceType)) {
     // define props that Knight should receive
-    return withPiece(Knight)();
+    let NewKnight = withPiece(Knight);
+    return <NewKnight pieceColor={pieceColor} />
   }
   if (/^[Bb]+$/.test(pieceType)) {
     // define props that Bishop should receive
-    return withPiece(Bishop)();
+    let NewBishop = withPiece(Bishop);
+    return <NewBishop pieceColor={pieceColor} />
   }
   if (/^[Rr]+$/.test(pieceType)) {
     // define props that Rook should receive
-    return withPiece(Rook)();
+    let NewRook = withPiece(Rook);
+    return <NewRook pieceColor={pieceColor} />
   }
   if (/^[Qq]+$/.test(pieceType)) {
     // define props that Queen should receive
-    return withPiece(Queen)();
+    let NewQueen = withPiece(Queen);
+    return <NewQueen pieceColor={pieceColor} />
   }
   if (/^[Kk]+$/.test(pieceType)) {
     // define props that King should receive
-    return withPiece(King)();
+    let NewKing = withPiece(King);
+    return <NewKing pieceColor={pieceColor} />
   }
 }
 

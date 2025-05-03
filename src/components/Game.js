@@ -1,7 +1,7 @@
 // import './Game.css';
 import { useState } from 'react';
 import Display from './Display';
-import CreatePiece from '../utilities/createPiece';
+import CreatePiece from '../utilities/CreatePiece';
 
 function Game() {
   let [isActive, setIsActive] = useState(true);
