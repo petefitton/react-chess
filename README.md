@@ -1,4 +1,4 @@
-# React Chess App
+# (Unfinished) React Chess App
 React chess app built from scratch
 
 ### References
